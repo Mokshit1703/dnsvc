@@ -5,6 +5,18 @@
     <link rel="icon" href="C:\Users\Dhruv\PycharmProjects\DNSVideoChat\DNSVideoChat\favicon_io\favicon.png" type="image/icon" sizes="16x16">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <!-- Theme CSS -->
+    <link href="{% static 'css/agency.css' %}" rel="stylesheet">
     <style>
         body,
         html {
@@ -95,41 +107,52 @@
             }
         }
     </style>
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-    <!-- Custom Fonts -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-    <!-- Theme CSS -->
-    <link href="{% static 'css/agency.css' %}" rel="stylesheet">
 </head>
 <body>
     <!--begin::form-->
-    <form action="/" method="post"> {% csrf_token %}
+    <form action="/home" method="post"> {% csrf_token %}
+    <div class="text-center">
         <h2>Welcome To DNS Video Chat</h2>
+    </div>
         <p><strong>Login Form</strong></p>
         <div class="container">
             <label for="email"><b>Username</b></label>
-            <input type="text" class="form-control" name="email" id="user-name" placeholder="Enter your email" required>
+            <div class="col-lg-6 col-md-6 mb-4">
+    				Your ID: <h4 id="peer-id" data-toggle="tooltip" data-placement="top" title="Click to copy peer ID"></h3>
+                    <a href="#getUserNameModal" data-toggle="modal">change</a>
+    		</div>
+            
             <label for="name"><b>Password</b></label>
             <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" minlength="4"
                 required>
             <br>
             <br>
             <button type="submit">Login</button><br>
-            <label>
-                <input type="checkbox" name="remember"> Remember me
-            </label>
+            
         </div>
         <div class="container">
             <button type="button" class="cancelbtn">Cancel</button>
-            <span class="psw"><a href="#">Forgot password?</a></span>
+           
         </div>
     </form>
+
+    <div class="modal" id="getUserNameModal" tabindex="-1" role="dialog" data-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop='static'>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Enter your Name</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="user-name">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-primary username-done">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--end::form-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
