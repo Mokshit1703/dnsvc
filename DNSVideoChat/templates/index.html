@@ -1,0 +1,143 @@
+<html>
+{% load static %}
+<head>
+    <!--Favicon-->
+    <link rel="icon" href="C:\Users\Dhruv\PycharmProjects\DNSVideoChat\DNSVideoChat\favicon_io\favicon.png" type="image/icon" sizes="16x16">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body,
+        html {
+            font-family: Arial, Helvetica, sans-serif;
+            ;
+        }
+        form {
+            width: fit-content;
+            padding: 60px;
+            height: fit-content;
+            margin: 0 auto;
+            margin-top: 2%;
+            background-color: #f9f9f9
+        }
+        /* Full-width input fields */
+        .form-control {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        /* Set a style for all buttons */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 60%;
+            margin: 5px auto;
+            padding: 15px;
+            box-shadow: 0px 5px 5px #ccc;
+            border-radius: 5px;
+            border-top: 1px solid #e9e9e9;
+            display: block;
+            text-align: center;
+        }
+        .cancelbtn {
+            width: auto;
+            float: left;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+        .login-box {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 0px 5px 5px #ccc;
+            border-radius: 5px;
+            border-top: 1px solid hsl(0, 0%, 91%);
+        }
+        button:hover,
+        #btn-signup:hover {
+            opacity: 0.8;
+        }
+        /* Center the image and position the close button */
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+        .container {
+            padding: 16px;
+        }
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+        h2,
+        p {
+            text-align: center;
+        }
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <!-- Theme CSS -->
+    <link href="{% static 'css/agency.css' %}" rel="stylesheet">
+</head>
+<body>
+    <!--begin::form-->
+    <form action="/" method="post"> {% csrf_token %}
+        <h2>Welcome To DNS Video Chat</h2>
+        <p><strong>Login Form</strong></p>
+        <div class="container">
+            <label for="email"><b>Username</b></label>
+            <input type="text" class="form-control" name="email" id="user-name" placeholder="Enter your email" required>
+            <label for="name"><b>Password</b></label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" minlength="4"
+                required>
+            <br>
+            <br>
+            <button type="submit">Login</button><br>
+            <label>
+                <input type="checkbox" name="remember"> Remember me
+            </label>
+        </div>
+        <div class="container">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw"><a href="#">Forgot password?</a></span>
+        </div>
+    </form>
+    <!--end::form-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+    <script src="{% static 'js/peer.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/peer-client.js' %}"></script>
+</body>
+</html>
